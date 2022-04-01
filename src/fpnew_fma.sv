@@ -107,6 +107,7 @@ module fpnew_fma #(
   AuxType                [0:NUM_INP_REGS]                 inp_pipe_aux_q;
   logic                  [0:NUM_INP_REGS]                 inp_pipe_valid_q;
   // Ready signal is combinatorial for all stages
+  /* verilator lint_off UNOPTFLAT */
   logic [0:NUM_INP_REGS] inp_pipe_ready;
 
   // Input stage: First element of pipeline is taken from inputs
