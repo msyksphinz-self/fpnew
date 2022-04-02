@@ -157,7 +157,7 @@ module fpnew_opgroup_multifmt_slice #(
     localparam fpnew_pkg::fmt_logic_t LANE_FORMATS = (OpGroup == fpnew_pkg::CONV)
                                                      ? CONV_FORMATS : ACTIVE_FORMATS;
     localparam int unsigned LANE_WIDTH = (OpGroup == fpnew_pkg::CONV) ? CONV_WIDTH : MAX_WIDTH;
-
+    /* verilator lint_off UNOPTFLAT */
     logic [LANE_WIDTH-1:0] local_result; // lane-local results
 
     // Generate instances only if needed, lane 0 always generated

@@ -21,6 +21,7 @@ module fpnew_classifier #(
 ) (
   input  logic                [NumOperands-1:0][WIDTH-1:0] operands_i,
   input  logic                [NumOperands-1:0]            is_boxed_i,
+  /* verilator lint_off UNOPTFLAT */
   output fpnew_pkg::fp_info_t [NumOperands-1:0]            info_o
 );
 

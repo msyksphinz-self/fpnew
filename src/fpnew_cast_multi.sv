@@ -119,6 +119,7 @@ module fpnew_cast_multi #(
   AuxType                 [0:NUM_INP_REGS]                  inp_pipe_aux_q;
   logic                   [0:NUM_INP_REGS]                  inp_pipe_valid_q;
   // Ready signal is combinatorial for all stages
+  /* verilator lint_off UNOPTFLAT */
   logic [0:NUM_INP_REGS] inp_pipe_ready;
 
   // Input stage: First element of pipeline is taken from inputs
@@ -182,6 +183,7 @@ module fpnew_cast_multi #(
   logic        [NUM_FORMATS-1:0][INT_MAN_WIDTH-1:0] fmt_mantissa;
   logic signed [NUM_FORMATS-1:0][INT_EXP_WIDTH-1:0] fmt_shift_compensation; // for LZC
 
+  /* verilator lint_off UNOPTFLAT */
   fpnew_pkg::fp_info_t [NUM_FORMATS-1:0] info;
 
   logic [NUM_INT_FORMATS-1:0][INT_MAN_WIDTH-1:0] ifmt_input_val;
@@ -547,6 +549,7 @@ module fpnew_cast_multi #(
     .exact_zero_o            ( result_true_zero  )
   );
 
+  /* verilator lint_off UNOPTFLAT */
   logic [NUM_FORMATS-1:0][WIDTH-1:0] fmt_result;
 
   // Detect overflows and inject sign
@@ -590,6 +593,7 @@ module fpnew_cast_multi #(
   fpnew_pkg::status_t fp_special_status;
   logic               fp_result_is_special;
 
+  /* verilator lint_off UNOPTFLAT */
   logic [NUM_FORMATS-1:0][WIDTH-1:0] fmt_special_result;
 
   // Special result construction
@@ -678,6 +682,7 @@ module fpnew_cast_multi #(
   // -----------------
   // Result selection
   // -----------------
+  /* verilator lint_off UNOPTFLAT */
   fpnew_pkg::status_t int_regular_status, fp_regular_status;
 
   logic [WIDTH-1:0]   fp_result, int_result;
