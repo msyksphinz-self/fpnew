@@ -98,14 +98,14 @@ module fpnew_fma #(
   // Input pipeline
   // ---------------
   // Input pipeline signals, index i holds signal after i register stages
-  logic                  [0:NUM_INP_REGS][2:0][WIDTH-1:0] inp_pipe_operands_q;
-  logic                  [0:NUM_INP_REGS][2:0]            inp_pipe_is_boxed_q;
-  fpnew_pkg::roundmode_e [0:NUM_INP_REGS]                 inp_pipe_rnd_mode_q;
-  fpnew_pkg::operation_e [0:NUM_INP_REGS]                 inp_pipe_op_q;
-  logic                  [0:NUM_INP_REGS]                 inp_pipe_op_mod_q;
-  TagType                [0:NUM_INP_REGS]                 inp_pipe_tag_q;
-  AuxType                [0:NUM_INP_REGS]                 inp_pipe_aux_q;
-  logic                  [0:NUM_INP_REGS]                 inp_pipe_valid_q;
+  logic                  [NUM_INP_REGS:0][2:0][WIDTH-1:0] inp_pipe_operands_q;
+  logic                  [NUM_INP_REGS:0][2:0]            inp_pipe_is_boxed_q;
+  fpnew_pkg::roundmode_e [NUM_INP_REGS:0]                 inp_pipe_rnd_mode_q;
+  fpnew_pkg::operation_e [NUM_INP_REGS:0]                 inp_pipe_op_q;
+  logic                  [NUM_INP_REGS:0]                 inp_pipe_op_mod_q;
+  TagType                [NUM_INP_REGS:0]                 inp_pipe_tag_q;
+  AuxType                [NUM_INP_REGS:0]                 inp_pipe_aux_q;
+  logic                  [NUM_INP_REGS:0]                 inp_pipe_valid_q;
   // Ready signal is combinatorial for all stages
   /* verilator lint_off UNOPTFLAT */
   logic [0:NUM_INP_REGS] inp_pipe_ready;
