@@ -73,6 +73,7 @@ module fpnew_opgroup_block #(
   } output_t;
 
   // Handshake signals for the slices
+  /* verilator lint_off UNOPTFLAT */
   logic [NUM_FORMATS-1:0] fmt_in_ready, fmt_out_valid, fmt_out_ready, fmt_busy;
   output_t [NUM_FORMATS-1:0] fmt_outputs;
 
